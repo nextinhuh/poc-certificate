@@ -10,6 +10,7 @@ resource "aws_ecs_task_definition" "step_ca" {
   cpu                       = "256"
   memory                    = "512"
   execution_role_arn        = data.aws_iam_role.ecs_execution.arn
+  task_role_arn             = aws_iam_role.step_ca_task.arn
 
   volume {
     name = "step-ca-home"
